@@ -1,59 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="9fad09f" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.4.0" camunda:diagramRelationId="4a1fcfed-c121-402d-9c7a-b68a4e92a919">
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:modeler="http://camunda.org/schema/modeler/1.0" xmlns:zeebe="http://camunda.org/schema/zeebe/1.0" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="Definitions_1" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Web Modeler" exporterVersion="9fad09f" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.10.0" camunda:diagramRelationId="4a1fcfed-c121-402d-9c7a-b68a4e92a919">
   <bpmn:collaboration id="Collaboration_0sag4y0">
     <bpmn:participant id="Participant_RequestAnnualLeave" name="Request Annual Leave" processRef="Process_RequestAnnualLeave" />
   </bpmn:collaboration>
   <bpmn:process id="Process_RequestAnnualLeave" name="Request Annual Leave" isExecutable="true">
-    <bpmn:extensionElements>
-      <zeebe:userTaskForm id="userTaskForm_2j2flpl">{
-  "components": [
-    {
-      "text": "# Annual Leave Request\n\nPlease try to submit your application **at least one month** before the desired Start Date.",
-      "type": "text",
-      "id": "Field_1virzfs"
-    },
-    {
-      "label": "Start Date",
-      "type": "textfield",
-      "id": "Field_08m7goz",
-      "key": "startDate",
-      "description": "Format - DD.MM.YYYY",
-      "validate": {
-        "required": true,
-        "minLength": 10,
-        "maxLength": 10
-      }
-    },
-    {
-      "label": "End Date",
-      "type": "textfield",
-      "id": "Field_0akd0u2",
-      "key": "endDate",
-      "description": "Format - DD.MM.YYYY",
-      "validate": {
-        "required": true,
-        "minLength": 10,
-        "maxLength": 10
-      }
-    },
-    {
-      "label": "Comment",
-      "type": "textfield",
-      "id": "Field_1vcu82t",
-      "key": "comment"
-    }
-  ],
-  "schemaVersion": 4,
-  "exporter": {
-    "name": "Camunda Web Modeler",
-    "version": "24d6945"
-  },
-  "type": "default",
-  "id": "Form_RequestAnnualLeave",
-  "executionPlatform": "Camunda Cloud",
-  "executionPlatformVersion": "1.3"
-}</zeebe:userTaskForm>
-    </bpmn:extensionElements>
     <bpmn:laneSet id="LaneSet_1mlrmjw">
       <bpmn:lane id="Lane_01m795q" name="Line Manager">
         <bpmn:flowNodeRef>Task_ReviewRequest</bpmn:flowNodeRef>
@@ -74,6 +24,7 @@
     </bpmn:startEvent>
     <bpmn:userTask id="Task_ReviewRequest" name="Review Request">
       <bpmn:extensionElements>
+        <zeebe:userTask />
         <zeebe:formDefinition formId="Form_ReviewRequest" />
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_RequestAnnualLeave-ReviewRequest</bpmn:incoming>
@@ -82,6 +33,7 @@
     </bpmn:userTask>
     <bpmn:userTask id="Task_RequestAnnualLeave" name="Request Annual Leave">
       <bpmn:extensionElements>
+        <zeebe:userTask />
         <zeebe:formDefinition formId="Form_RequestAnnualLeave" />
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_Start-RequestAnnualLeave</bpmn:incoming>
@@ -95,7 +47,8 @@
     </bpmn:exclusiveGateway>
     <bpmn:userTask id="Task_ProvideAdditionalInformation" name="Provide Additional Information">
       <bpmn:extensionElements>
-        <zeebe:formDefinition formKey="camunda-forms:bpmn:userTaskForm_2j2flpl" />
+        <zeebe:userTask />
+        <zeebe:formDefinition formId="Form_ProvideAdditionalInformation" />
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_Decision-InformationRequired</bpmn:incoming>
       <bpmn:outgoing>Flow_AdditionalInformation-ReviewRequest</bpmn:outgoing>

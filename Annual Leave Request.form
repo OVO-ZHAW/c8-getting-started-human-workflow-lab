@@ -1,0 +1,64 @@
+{
+  "components": [
+    {
+      "type": "text",
+      "id": "Field_RAL_title",
+      "text": "# Annual Leave Request"
+    },
+    {
+      "type": "textfield",
+      "id": "Field_RAL_employee",
+      "label": "Employee",
+      "key": "employee",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "type": "select",
+      "id": "Field_RAL_leaveType",
+      "label": "Leave type",
+      "key": "leaveType",
+      "values": [
+        {
+          "label": "Vacation",
+          "value": "vacation"
+        },
+        {
+          "label": "Unpaid leave",
+          "value": "unpaid"
+        },
+        {
+          "label": "Special leave",
+          "value": "special"
+        }
+      ],
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "type": "textfield",
+      "id": "Field_RAL_startDate",
+      "label": "Start Date",
+      "key": "startDate",
+      "description": "Format - DD.MM.YYYY"
+    },
+    {
+      "type": "textfield",
+      "id": "Field_RAL_endDate",
+      "label": "End Date",
+      "key": "endDate",
+      "description": "Format - DD.MM.YYYY"
+    }
+  ],
+  "type": "default",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "8.10.0"
+  },
+  "schemaVersion": 16,
+  "id": "Form_RequestAnnualLeave"
+}

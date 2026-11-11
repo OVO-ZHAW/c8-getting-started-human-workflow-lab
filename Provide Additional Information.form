@@ -1,0 +1,27 @@
+{
+  "components": [
+    {
+      "type": "text",
+      "id": "Field_PAI_title",
+      "text": "# Provide Additional Information"
+    },
+    {
+      "type": "textarea",
+      "id": "Field_PAI_info",
+      "label": "Additional information",
+      "key": "additionalInformation",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "8.10.0"
+  },
+  "schemaVersion": 16,
+  "id": "Form_ProvideAdditionalInformation"
+}

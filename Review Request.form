@@ -1,0 +1,47 @@
+{
+  "components": [
+    {
+      "type": "text",
+      "id": "Field_RR_title",
+      "text": "# Review Request"
+    },
+    {
+      "type": "radio",
+      "id": "Field_RR_decision",
+      "label": "Decision",
+      "key": "decision",
+      "values": [
+        {
+          "label": "Approved",
+          "value": "approved"
+        },
+        {
+          "label": "Rejected",
+          "value": "rejected"
+        },
+        {
+          "label": "Information Required",
+          "value": "additional"
+        }
+      ],
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "type": "textfield",
+      "id": "Field_RR_comment",
+      "label": "Comment",
+      "key": "reviewComment"
+    }
+  ],
+  "type": "default",
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "8.10.0"
+  },
+  "schemaVersion": 16,
+  "id": "Form_ReviewRequest"
+}
