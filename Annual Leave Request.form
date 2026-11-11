@@ -1,4 +1,12 @@
 {
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "b9fb551"
+  },
+  "schemaVersion": 16,
+  "id": "Form_RequestAnnualLeave",
   "components": [
     {
       "type": "text",
@@ -52,13 +60,5 @@
       "description": "Format - DD.MM.YYYY"
     }
   ],
-  "type": "default",
-  "executionPlatform": "Camunda Cloud",
-  "executionPlatformVersion": "8.10.0",
-  "exporter": {
-    "name": "Camunda Web Modeler",
-    "version": "8.10.0"
-  },
-  "schemaVersion": 16,
-  "id": "Form_RequestAnnualLeave"
+  "type": "default"
 }

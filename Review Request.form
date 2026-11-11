@@ -1,4 +1,12 @@
 {
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "b9fb551"
+  },
+  "schemaVersion": 16,
+  "id": "Form_ReviewRequest",
   "components": [
     {
       "type": "text",
@@ -35,13 +43,5 @@
       "key": "reviewComment"
     }
   ],
-  "type": "default",
-  "executionPlatform": "Camunda Cloud",
-  "executionPlatformVersion": "8.10.0",
-  "exporter": {
-    "name": "Camunda Web Modeler",
-    "version": "8.10.0"
-  },
-  "schemaVersion": 16,
-  "id": "Form_ReviewRequest"
+  "type": "default"
 }

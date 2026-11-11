@@ -1,0 +1,23 @@
+{
+  "executionPlatform": "Camunda Cloud",
+  "executionPlatformVersion": "8.10.0",
+  "exporter": {
+    "name": "Camunda Web Modeler",
+    "version": "b9fb551"
+  },
+  "schemaVersion": 19,
+  "id": "Form_1hj5nyy",
+  "components": [
+    {
+      "label": "Annual Leave Request",
+      "type": "textfield",
+      "layout": {
+        "row": "Row_1dpvr5x",
+        "columns": null
+      },
+      "id": "Field_034n9bf",
+      "key": "textfield_2dbyln"
+    }
+  ],
+  "type": "default"
+}
